@@ -1,5 +1,6 @@
 function miniMaxSum(arr) {
-    let mini = 0, max = 0;
+    let mini = 0;
+    let max = 0;
     let popV = arr.pop();
    
     for (let i=0; i<arr.length; i++){
@@ -7,7 +8,7 @@ function miniMaxSum(arr) {
     }
 
     arr.push(popV);
-    arr.shift()
+    arr.shift();
 
     for (let j=0; j<arr.length; j++){
         max += arr[j];
