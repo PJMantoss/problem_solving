@@ -10,7 +10,8 @@ function diagonalDifference(arr){
         //Reverse and calculate the inner array
         diagTwo += arr[arr.length -1 -i][i]
     }
-
+     
+    //return absolute difference between diagonals
     output = Math.abs(diagOne - diagTwo);
 
     return output;
