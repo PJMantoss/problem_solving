@@ -17,11 +17,12 @@ Output Format
 
 Print the integer sum of the elements in the array.
 */
+
 function aVeryBigSum(ar) {
     let output = 0; //Initialize Result variable
  //Loop through ar to access each element
     for (let i=0; i<ar.length; i++){
-        output += ar[i];
+        output += ar[i]; //Add up all elements
     }
     
     //return final result
