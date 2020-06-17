@@ -18,16 +18,16 @@ Output Format
 Print the integer sum of the elements in the array.
 */
 function aVeryBigSum(ar) {
-    let output = 0;
-
+    let output = 0; //Initialize Result variable
+ //Loop through ar to access each element
     for (let i=0; i<ar.length; i++){
-        let cur = ar[i];
-        cur += ar[i + 1];
-        output = cur;
+        output += ar[i];
     }
-
+    
+    //return final result
     return output;
 
 }
 
+//Test
 aVeryBigSum([1000000001, 1000000002, 1000000003, 1000000004, 1000000005]);
