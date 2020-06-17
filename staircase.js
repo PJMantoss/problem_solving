@@ -6,7 +6,7 @@ function staircase(n) {
     while(stepsArray.indexOf(' ') !== -1){
         stepsArray.shift();//
         stepsArray.push('#');//
-        console.log(stepsArray.join('')); //
+        console.log(stepsArray.join('')); //Output each row as a string using .join()
         n--; //
     }
 }
