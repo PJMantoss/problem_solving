@@ -1,3 +1,4 @@
+//Write a program that prints a staircase of size n.
 function staircase(n) {
     let stepsArray = new Array(n).fill(' ');
 
