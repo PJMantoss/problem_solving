@@ -27,13 +27,13 @@ function compareTriplets(a, b) {
     //Loop through 'a' to access each element
     for (let i=0; i<a.length; i++){
         let cur = a[i]; //current value in a
-        
+
       //Loop through 'b' to access each element
         for (let j=0; j<b.length; j++){
             let cur2 = b[j]; //current value in b
-            if(cur > cur2 && i == j){ //If current value in a is greater than in b at the same index add to Alice's score
+            if(cur > cur2 && i == j){ //If current value in a is greater than in b at the same index, add to Alice's score
                 aliceScore++;
-            } else if(cur2 > cur && i == j){ //If current value in b is greater than in a at the same index add to Bob's score
+            } else if(cur2 > cur && i == j){ //If current value in b is greater than in a at the same index, add to Bob's score
                 bobScore++;
             } 
         }
