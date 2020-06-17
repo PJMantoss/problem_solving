@@ -1,9 +1,14 @@
 function diagonalDifference(arr){
-    let output = 0, diagOne = 0, diagTwo = 0;
-
+    let output = 0, 
+        diagOne = 0, //Input matrix
+        diagTwo = 0;
+    
+    //Loop through array to access diagonals
     for (let i=0; i<arr.length; i++){
+        //Calculating the primary diagonal
         diagOne += arr[i][i];
-        diagTwo += arr[i -1 -i][i]
+        //
+        diagTwo += arr[arr.length -1 -i][i]
     }
 
     output = Math.abs(diagOne - diagTwo);
