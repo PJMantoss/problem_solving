@@ -17,3 +17,13 @@ Output Format
 
 Print the integer sum of the elements in the array.
 */
+function aVeryBigSum(ar) {
+    let output;
+
+    for (let i=0; i<ar.length; i++){
+        output = ar[i] + ar[i + 1];
+    }
+
+    return output;
+
+}
