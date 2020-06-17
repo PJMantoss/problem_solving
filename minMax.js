@@ -1,11 +1,13 @@
 function miniMaxSum(arr) {
     let mini = 0, max = 0;
-    for (i=0; i<arr.length; i++){
         let miniArr = arr.pop();
         let maxArr = arr.shift();
+    for (let i=0; i<miniArr.length; i++){
         mini += miniArr[i];
-        max += maxArr[i];
-        console.log(Number(mini) + ' ' + Number(max));
+        for (let j=0; j<maxArr.length; j++){
+            max += maxArr[j];
+            console.log(mini + ' ' + max);
+        }
     }
 }
 
