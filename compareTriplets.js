@@ -24,10 +24,10 @@ function compareTriplets(a, b) {
          aliceScore = 0, //Placeholder for Alice's score
          bobScore = 0; //Placeholder for Bob's score
     
-    //Loop through 'a' to access each score
+    //Loop through 'a' to access each element
     for (let i=0; i<a.length; i++){
         let cur = a[i]; //current value in a
-
+      //
         for (let j=0; j<b.length; j++){
             let cur2 = b[j]; //current value in b
             if(cur > cur2 && i == j){ //If current value in a is greater than in b at the same index add to Alice's score
