@@ -7,22 +7,23 @@ Complete the aVeryBigSum function in the editor below. It must return the sum of
 
 aVeryBigSum has the following parameter(s):
 
-ar: an array of integers .
+ar: an array of integers n.
 Input Format
 
-The first line of the input consists of an integer .
-The next line contains  space-separated integers contained in the array.
+The first line of the input consists of an integer n.
+The next line contains n space-separated integers contained in the array.
 
 Output Format
 
 Print the integer sum of the elements in the array.
 */
 function aVeryBigSum(ar) {
-    let output = [], sum = 0;
+    let output = 0;
 
     for (let i=0; i<ar.length; i++){
-        sum += ar[i] + ar[i + 1];
-        output.push(sum);
+        let cur = ar[i];
+        cur += ar[i + 1];
+        output = cur;
     }
 
     return output;
