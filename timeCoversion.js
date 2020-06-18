@@ -7,36 +7,36 @@ timeConversion has the following parameter(s):
 s: a string representing time in 12 hour format
 */
 function timeConversion(s) {
-
+    //convert string s to an array
     let newStr = s.split(':');
+    //Grab the first element, hour, and save as hr
+    let hr = newStr.shift();
+    //Convert the string 'hr' to number
+    let hour = Number(hr);
+    let result;//Place holder for outputs
 
-    let firstElem = newStr.shift();
-    let firstElement = Number(firstElem);
-    let result;
+    let sec = newStr.pop();
 
-    let thirdElem = newStr.pop();
-
-    if(firstElement === 12 && s.indexOf('AM') !== -1){
-        result = '0' + (firstElement - 12);
+    if(hour === 12 && s.indexOf('AM') !== -1){
+        result = '0' + (hour - 12);
         //result.toString();
         newStr.unshift(result);
-    }else if(firstElement == 12 && s.indexOf('PM') !== -1){
-        result = firstElement + 0;
+    }else if(hour == 12 && s.indexOf('PM') !== -1){
+        result = hour + 0;
         result.toString();
         newStr.unshift(result);
-    }else if(firstElement < 12 && s.indexOf('AM') !== -1){
-        result = '0' + (firstElement + 0);
-        //result.toString();
+    }else if(hour < 12 && s.indexOf('AM') !== -1){
+        result = '0' + (hour + 0);
         newStr.unshift(result);
     }else {
-        result = firstElement + 12;
+        result = hour + 12;
         result.toString();
         newStr.unshift(result);
     }
 
-    let thirdElement = thirdElem.split(/[A-Z]/)[0].trim();
+    let seconds = sec.split(/[A-Z]/)[0].trim();
 
-    newStr.push(thirdElement);
+    newStr.push(seconds);
 
     return newStr.join(':');
 
