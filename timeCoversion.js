@@ -13,31 +13,35 @@ function timeConversion(s) {
     let hr = newStr.shift();
     //Convert the string 'hr' to number
     let hour = Number(hr);
+
     let result;//Place holder for outputs
 
-    let sec = newStr.pop();
-
-    if(hour === 12 && s.indexOf('AM') !== -1){
-        result = '0' + (hour - 12);
-        //result.toString();
-        newStr.unshift(result);
-    }else if(hour == 12 && s.indexOf('PM') !== -1){
+    if(hour === 12 && s.indexOf('AM') !== -1){//If it's midnight convert to military time
+        result = '0' + (hour - 12); //Prepend 0 to hour to format time to 00:00:00
+        newStr.unshift(result);//add new hour to the beginning of array
+    }else if(hour == 12 && s.indexOf('PM') !== -1){ //If it's noon convert to military time
         result = hour + 0;
-        result.toString();
+        result.toString(); //Convert to string and add to the beginning of array
         newStr.unshift(result);
-    }else if(hour < 12 && s.indexOf('AM') !== -1){
+    }else if(hour < 12 && s.indexOf('AM') !== -1){//If it's before noon (1-11AM) convert to military time
         result = '0' + (hour + 0);
         newStr.unshift(result);
     }else {
         result = hour + 12;
-        result.toString();
+        result.toString();//Convert to string and add to the beginning of array
         newStr.unshift(result);
     }
 
+    //Grab the last element, second, and save as sec
+    let sec = newStr.pop();
+    
+    //Trim off AM/PM from the sec and save as seconds
     let seconds = sec.split(/[A-Z]/)[0].trim();
 
+    //Add the seconds value back to the array newStr
     newStr.push(seconds);
 
+    //Convert newStr back into a string and return the final result
     return newStr.join(':');
 
 }
