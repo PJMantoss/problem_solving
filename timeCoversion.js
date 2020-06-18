@@ -41,7 +41,7 @@ function timeConversion(s) {
     //Add the seconds value back to the array newStr
     newStr.push(seconds);
 
-    //Convert newStr back into a string and return the final result
+    //Convert newStr array back into a string and return the final result
     return newStr.join(':');
 
 }
