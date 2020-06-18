@@ -1,21 +1,27 @@
 function timeConversion(s) {
-    let output = [];
 
     let newStr = s.split(':');
     let lastElem = newStr.pop();
-    lastElem.split('/[A-Z]/')[0].trim();
+    let lastElement = lastElem.split(/[A-Z]/)[0].trim();
 
-    newStr.push(lastElem);
+    newStr.push(lastElement);
 
-    let newString = Number(newStr);
+    let firstElem = newStr.shift();
+    let firstElement = Number(firstElem);
+    let result;
 
-    if(newString[0] == 12){
-        newString[0] - 12;
-        output.push(newString);
+    if(firstElement == 12){
+        result = firstElement - 12;
+        result.toString();
+        newStr.unshift(result);
     } else {
-        newString[0] + 12;
+        firstElement + 12;
+        result.toString();
+        newStr.unshift(result);
     }
 
-    return output.join(':');
+    return newStr.join(':');
 
 }
+
+timeConversion('07:05:45PM');
