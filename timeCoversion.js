@@ -9,27 +9,34 @@ s: a string representing time in 12 hour format
 function timeConversion(s) {
 
     let newStr = s.split(':');
-    let lastElem = newStr.pop();
-    let lastElement = lastElem.split(/[A-Z]/)[0].trim();
-
-    newStr.push(lastElement);
 
     let firstElem = newStr.shift();
     let firstElement = Number(firstElem);
     let result;
 
-    if(firstElement == 12){
+    let secondElement = newStr[1];
+    let thirdElem = newStr.pop();
+
+    if(firstElement == 12 && thirdElem.includes(AM)){
         result = firstElement - 12;
         result.toString();
         newStr.unshift(result);
-    } else {
+    }else if(firstElement == 12 && thirdElem.includes('PM')){
+        result = firstElement + 0;
+        result.toString();
+        newStr.unshift(result);
+    }else {
         result = firstElement + 12;
         result.toString();
         newStr.unshift(result);
     }
 
+    let thirdElement = thirdElem.split(/[A-Z]/)[0].trim();
+
+    newStr.push(thirdElement);
+
     return newStr.join(':');
 
 }
 
-timeConversion('07:05:45PM');
+timeConversion('12:00:00PM');
