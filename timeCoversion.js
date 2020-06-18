@@ -14,16 +14,19 @@ function timeConversion(s) {
     let firstElement = Number(firstElem);
     let result;
 
-    let secondElement = newStr[1];
     let thirdElem = newStr.pop();
 
-    if(firstElement == 12 && thirdElem.includes(AM)){
-        result = firstElement - 12;
-        result.toString();
+    if(firstElement === 12 && s.indexOf('AM') !== -1){
+        result = '0' + (firstElement - 12);
+        //result.toString();
         newStr.unshift(result);
-    }else if(firstElement == 12 && thirdElem.includes('PM')){
+    }else if(firstElement == 12 && s.indexOf('PM') !== -1){
         result = firstElement + 0;
         result.toString();
+        newStr.unshift(result);
+    }else if(firstElement < 12 && s.indexOf('AM') !== -1){
+        result = '0' + (firstElement + 0);
+        //result.toString();
         newStr.unshift(result);
     }else {
         result = firstElement + 12;
@@ -39,4 +42,4 @@ function timeConversion(s) {
 
 }
 
-timeConversion('12:00:00PM');
+timeConversion('12:05:00AM');
