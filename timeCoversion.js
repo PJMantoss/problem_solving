@@ -1,3 +1,11 @@
+/*
+Complete the timeConversion function in the editor below. 
+It should return a new string representing the input time in 24 hour format.
+
+timeConversion has the following parameter(s):
+
+s: a string representing time in 12 hour format
+*/
 function timeConversion(s) {
 
     let newStr = s.split(':');
@@ -15,7 +23,7 @@ function timeConversion(s) {
         result.toString();
         newStr.unshift(result);
     } else {
-        firstElement + 12;
+        result = firstElement + 12;
         result.toString();
         newStr.unshift(result);
     }
