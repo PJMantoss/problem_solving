@@ -1,3 +1,7 @@
+/*
+Complete the countApplesAndOranges function in the editor below. It should print the number of apples and oranges that land on Sam's house, each on a separate line.
+*/
+
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
     /*
     Loop through the apples array to access each element. If the value of an
