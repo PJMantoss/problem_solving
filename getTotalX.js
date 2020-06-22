@@ -14,3 +14,5 @@ function getTotalX(a, b) {
         return count;
 
 }
+
+getTotalX([2,4], [16, 32, 96]);
