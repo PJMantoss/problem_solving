@@ -1,17 +1,16 @@
 function getTotalX(a, b) {
-    let count = 0,
-        factor;
+    let count = 0;
 
         for (let i=0; i<a.length; i++){
             
             for (let j=0; j<b.length; j++){
-                if(factor % a[i] === 0 && b[j] % factor === 0){
+                if(b[j] % a[i] === 0){
                     count++;
                 }
             }
         }
 
-        return count;
+        return count / 2;
 
 }
 
