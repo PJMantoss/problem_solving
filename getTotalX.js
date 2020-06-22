@@ -1,17 +1,15 @@
 function getTotalX(a, b) {
     let count = 0;
 
-        for (let i=0; i<a.length; i++){
-            
-            for (let j=0; j<b.length; j++){
-                if(b[j] % a[i] === 0){
-                    count++;
-                }
+    for (let i = 1; i <= 100; i++){
+        if(a.every(v => (i % v == 0))){
+            if(b.every(v => (v % i == 0))){
+                count++;
             }
         }
+    }
 
-        return count / 2;
-
+    return count;
 }
 
 getTotalX([2,4], [16, 32, 96]);
