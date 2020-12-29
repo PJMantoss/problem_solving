@@ -13,4 +13,10 @@ const getUsers = async () => {
     return result;
 }
 
-getUsers();
+(async function(){
+    try{
+        console.log(await getUsers())
+    }catch(err){
+        console.log(err)
+    }
+})();
