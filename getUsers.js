@@ -8,9 +8,9 @@ const getUsers = async () => {
     const response = await fetch(api);
     const json = await response.json();
 
-    const result = json.filter(v >= v.name.toLowerCase().includes('k'));
+    const result = json.filter(v >= v.name.toLowerCase().includes('k')).map(({name, email}) => ({name, email}))
 
-    console.log(result);
+    return result;
 }
 
 getUsers();
