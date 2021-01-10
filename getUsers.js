@@ -4,7 +4,7 @@ only names and emails of the users whose name contains letter k.
 */
 
 const getUsers = async () => {
-    const api = 'https://jsonplaceholder.typicode.com/users';
+    const api = 'http://jsonplaceholder.typicode.com/users';
     const response = await fetch(api);
     const json = await response.json();
 
